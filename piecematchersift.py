@@ -74,7 +74,7 @@ class PieceMatcher(object):
         sobel = aux.open_image(sobel, (9,9))
         sobel = aux.smoother_edges(sobel, (15,15), (5,5), 1.7, -0.3)
         #threshold_custom = tb.SimpleTrackbar(sobel, "SobelThresh")
-        th, sobel = cv2.threshold(sobel, 99, 255, cv2.THRESH_BINARY_INV)
+        th, sobel = cv2.threshold(sobel, 40, 255, cv2.THRESH_BINARY_INV)
         return sobel
 
     @staticmethod

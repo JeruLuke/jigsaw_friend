@@ -5,7 +5,7 @@ usage: threshold_custom = tb.SimpleTrackbar(img, "ImgThresh")
 import cv2
 import numpy as np
 
-def empty_function():
+def empty_function(*arg):
     pass
 
 def SimpleTrackbar(img, win_name):
