@@ -80,3 +80,8 @@ class PieceMatcher(object):
     @staticmethod
     def make_smaller(img):
         return cv2.resize(img, None, fx=0.2, fy=0.2)
+
+    def get_piece_masked_background(self, cropped_piece):
+        cropped_piece_gray = aux.image_to_gray(cropped_piece.copy())
+        mask = self.get_mask_sobel(cropped_piece_gray)
+        return cv2.bitwise_and(cropped_piece, cropped_piece, mask = mask)
